@@ -6,6 +6,7 @@
 """
 
 import cgi
+import json  # Python 2.6+
 import mimetypes
 import os
 from pprint import pprint
@@ -31,7 +32,7 @@ def not_found(environ, start_response):
 def simple_app(environ, start_response):
     status = '200 OK'
     headers = [('Content-type', 'text/plain')]
-    result= []
+    result = []
 
     path_info = environ['PATH_INFO']
 
@@ -47,17 +48,23 @@ def simple_app(environ, start_response):
     # Read POST body
     request_body = environ['wsgi.input'].read(request_body_size)
 
-    #if path_info and path_info.startswith('/'):
-    if 1:
+    if path_info and path_info == '/cgi-bin/toServerValue.cgi':
         #print(environ)
         #pprint(environ)
+        """
         print('PATH_INFO %r' % environ['PATH_INFO'])
         print('CONTENT_TYPE %r' % environ['CONTENT_TYPE'])
         print('QUERY_STRING %r' % environ['QUERY_STRING'])
         print('QUERY_STRING dict %r' % get_dict)
         print('REQUEST_METHOD %r' % environ['REQUEST_METHOD'])
         print('POST body %r' % request_body)
-        #print('environ %r' % environ)
+        print('environ %r' % environ)
+        """
+        data = json.loads(request_body)
+        print('data %r' % data)
+        print('command %r' % data['remote'])
+        result.append('')  # no idea what should be returned however Skipstone doesnt check :-)
+    else:
         return not_found(environ, start_response)
 
     start_response(status, headers)
