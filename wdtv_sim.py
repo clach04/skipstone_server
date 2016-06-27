@@ -13,9 +13,13 @@ from pprint import pprint
 import sys
 from wsgiref.simple_server import make_server
 
+import pyautogui  # https://github.com/asweigart/pyautogui
+
 
 def mute():
-    print(sys._getframe().f_code.co_name)
+    key_name = 'volumemute'
+    print(key_name)
+    pyautogui.press(key_name)
 
 def play_pause():
     print(sys._getframe().f_code.co_name)
