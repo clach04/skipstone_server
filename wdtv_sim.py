@@ -14,6 +14,9 @@ import sys
 from wsgiref.simple_server import make_server
 
 
+def mute():
+    print(sys._getframe().f_code.co_name)
+
 def play_pause():
     print(sys._getframe().f_code.co_name)
 
@@ -29,6 +32,7 @@ def forward():
 commands = {
     'H': rewind,
     'I': forward,
+    'M': mute,
     'p': play_pause,
 }
 
