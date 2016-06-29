@@ -43,10 +43,18 @@ def previous_track():
     pyautogui.press(key_name)
 
 def rewind():
-    print(sys._getframe().f_code.co_name)
+    key_name = 'rewind'
+    print(key_name)
+    # send two sets of controls, like chinavision cvsb-983 remote
+    pyautogui.hotkey('ctrl', 'shift', 'b')
+    pyautogui.hotkey('ctrl', 'left')
 
 def forward():
-    print(sys._getframe().f_code.co_name)
+    key_name = 'forward'
+    print(key_name)
+    # send two sets of controls, like chinavision cvsb-983 remote
+    pyautogui.hotkey('ctrl', 'shift', 'f')
+    pyautogui.hotkey('ctrl', 'right')
 
 
 # See https://github.com/Skipstone/Skipstone/blob/master/src/js/src/wdtv.js
