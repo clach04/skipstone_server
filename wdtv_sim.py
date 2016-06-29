@@ -42,6 +42,11 @@ def enter():
     print(key_name)
     pyautogui.press(key_name)
 
+def back():
+    key_name = 'backspace'
+    print(key_name)
+    pyautogui.press(key_name)
+
 def next_track():
     key_name = 'nexttrack'
     print(key_name)
@@ -78,6 +83,7 @@ commands = {
     'p': play_pause,
     't': stop,
     'n': enter,  # OK
+    'T': back,  # backspace
 }
 
 def not_found(environ, start_response):
