@@ -22,7 +22,7 @@ logging.basicConfig()
 log.setLevel(level=logging.DEBUG)
 
 
-def mute():
+def mute_toggle():
     key_name = 'volumemute'
     print(key_name)
     pyautogui.press(key_name)
@@ -44,7 +44,7 @@ def forward():
 commands = {
     'H': rewind,
     'I': forward,
-    'M': mute,
+    'M': mute_toggle,
     'p': play_pause,
 }
 
