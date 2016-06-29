@@ -63,7 +63,7 @@ def right():
     pyautogui.press(key_name)
 
 def back():
-    key_name = 'backspace'
+    key_name = 'browserback'
     print(key_name)
     pyautogui.press(key_name)
 
@@ -103,7 +103,7 @@ commands = {
     'p': play_pause,
     't': stop,
     'n': enter,  # OK
-    'T': back,  # backspace
+    'T': back,
     'u': up,
     'd': down,
     'l': left,
