@@ -32,6 +32,11 @@ def play_pause():
     print(key_name)
     pyautogui.press(key_name)
 
+def stop():
+    key_name = 'stop'
+    print(key_name)
+    pyautogui.press(key_name)
+
 def next_track():
     key_name = 'nexttrack'
     print(key_name)
@@ -66,6 +71,7 @@ commands = {
     'I': forward,
     'M': mute_toggle,
     'p': play_pause,
+    't': stop,
 }
 
 def not_found(environ, start_response):
