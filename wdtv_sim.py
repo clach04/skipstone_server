@@ -22,7 +22,9 @@ def mute():
     pyautogui.press(key_name)
 
 def play_pause():
-    print(sys._getframe().f_code.co_name)
+    key_name = 'playpause'
+    print(key_name)
+    pyautogui.press(key_name)
 
 def rewind():
     print(sys._getframe().f_code.co_name)
