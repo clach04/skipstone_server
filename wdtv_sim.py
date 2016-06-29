@@ -32,6 +32,16 @@ def play_pause():
     print(key_name)
     pyautogui.press(key_name)
 
+def next_track():
+    key_name = 'nexttrack'
+    print(key_name)
+    pyautogui.press(key_name)
+
+def previous_track():
+    key_name = 'prevtrack'
+    print(key_name)
+    pyautogui.press(key_name)
+
 def rewind():
     print(sys._getframe().f_code.co_name)
 
@@ -42,6 +52,8 @@ def forward():
 # See https://github.com/Skipstone/Skipstone/blob/master/src/js/src/wdtv.js
 # for commands
 commands = {
+    '[': previous_track,
+    ']': next_track,
     'H': rewind,
     'I': forward,
     'M': mute_toggle,
