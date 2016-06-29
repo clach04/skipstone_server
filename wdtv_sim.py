@@ -42,6 +42,26 @@ def enter():
     print(key_name)
     pyautogui.press(key_name)
 
+def up():
+    key_name = 'up'
+    print(key_name)
+    pyautogui.press(key_name)
+
+def down():
+    key_name = 'down'
+    print(key_name)
+    pyautogui.press(key_name)
+
+def left():
+    key_name = 'left'
+    print(key_name)
+    pyautogui.press(key_name)
+
+def right():
+    key_name = 'right'
+    print(key_name)
+    pyautogui.press(key_name)
+
 def back():
     key_name = 'backspace'
     print(key_name)
@@ -84,6 +104,10 @@ commands = {
     't': stop,
     'n': enter,  # OK
     'T': back,  # backspace
+    'u': up,
+    'd': down,
+    'l': left,
+    'r': right,
 }
 
 def not_found(environ, start_response):
