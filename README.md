@@ -1,5 +1,6 @@
-# skipstone_server
+# Skipstone Server
 
+Allows a PC to be controlled via keyboard controls from a Pebble using Skipstone.
 
 ### Table of Contents
 * [Information](#information)
