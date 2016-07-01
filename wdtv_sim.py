@@ -11,6 +11,7 @@ import logging
 import mimetypes
 import os
 from pprint import pprint
+import socket
 import SocketServer
 import sys
 from wsgiref.simple_server import make_server, WSGIServer, WSGIRequestHandler
@@ -212,12 +213,18 @@ class MyWSGIServer(WSGIServer):
 
 def doit():
     # TODO yep, currently hard coded if ran standalone
-    server_port = 8000
-    server_port = 8080
-    server_port = 8777
+    port = 8000
+    port = 8080
+    port = 8777
 
-    httpd = make_server('', server_port, simple_app, server_class=MyWSGIServer, handler_class=MyWSGIRequestHandler)
-    print("Serving on port %d..." % server_port)
+    httpd = make_server('', port, simple_app, server_class=MyWSGIServer, handler_class=MyWSGIRequestHandler)
+    # Attempt to determine actual IP address, with multipl addresses this may not be a useful IP
+    local_ip = socket.gethostbyname(socket.gethostname())
+    if not local_ip or local_ip == '127.0.1.1':
+        local_ip = socket.gethostbyname(socket.getfqdn())
+    log.info('Starting server: %r', (local_ip, port))
+    log.info('To stop, issue CTRL-C or (Windows) CTRL-Break')
+    log.info('Configure in Skipstone on phone using address: %s:%d', local_ip, port)
     httpd.serve_forever()
 
 
