@@ -24,9 +24,10 @@ Should work with any media player that supports media keys.
 
 ## Instructions
 
-  1. Install/run, by default the server starts on the local machine listening on port 8777.
+  1. If not already installed install Pebble app from appstore https://apps.getpebble.com/en_US/application/52f1095ba0cb6abe6d002f05.
+  2. Install/run the server `wdtv_sim.exe` (or `wdtv_sim.py` if running from source), by default the server starts on the local machine listening on port 8777.
   2. Open Skipstone config on phone, add a new WDTV device, name it, e.g. `fake WDTV`, enter in ip address of machine, colon, 8777. For example, assume IP address for server machine is 10.10.10.10, enter in, `10.10.10.10:8777`.
-  3. Save and then open Skipstone on watch, open WDTV from above (e.g. `fake WDTV`) then control and see https://github.com/Skipstone/Skipstone#wdtv for controls
+  3. Save and then open Skipstone on watch, open WDTV from above (e.g. `fake WDTV`). See below for some information on controls and see https://github.com/Skipstone/Skipstone#wdtv for latest information.
 
 ### Controls
 
