@@ -1,5 +1,14 @@
 # skipstone_server
 
+
+### Table of Contents
+* [Information](#information)
+* [Instructions](#instructions)
+* [Source information](#source_information)
+* 
+
+## Information
+
 Fake WDTV simulator for [Pebble app Skipstone](https://github.com/Skipstone/Skipstone)
 aim is to be a generic multimedia keyboard to control almost any
 player or application that supports multimedia keys.
