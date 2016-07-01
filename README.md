@@ -4,8 +4,7 @@
 ### Table of Contents
 * [Information](#information)
 * [Instructions](#instructions)
-* [Source information](#source_information)
-* 
+* [Source information](#source-information)
 
 ## Information
 
