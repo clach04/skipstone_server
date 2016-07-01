@@ -4,6 +4,7 @@
 #
 
 from distutils.core import setup
+import os
 
 import py2exe
 
@@ -22,9 +23,17 @@ options = {
     }
 }
 
+# Avoid cluttering directory containing exe file(s) with pyd files,
+# exe(s) will have python dll and then directory of dependencies
+zipfile = os.path.join('lib', 'shared.zip')
+
 
 setup(
     console=['wdtv_sim.py'],
     version=wdtv_sim.version,
-    options = options
+    options=options,
+    zipfile=zipfile
 )
+
+# TODO remove w9xpopen.exe
+# TODO zip up using version to generate filename.
