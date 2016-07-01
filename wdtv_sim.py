@@ -23,6 +23,9 @@ logging.basicConfig()
 log.setLevel(level=logging.DEBUG)
 
 
+version_tuple = (0, 0, 1)
+version = version_string = '%d.%d.%d' % version_tuple
+
 def mute_toggle():
     key_name = 'volumemute'
     print(key_name)
@@ -222,6 +225,7 @@ def doit():
     local_ip = socket.gethostbyname(socket.gethostname())
     if not local_ip or local_ip == '127.0.1.1':
         local_ip = socket.gethostbyname(socket.getfqdn())
+    log.info('wdtv simulator %s', version)
     log.info('Starting server: %r', (local_ip, port))
     log.info('To stop, issue CTRL-C or (Windows) CTRL-Break')
     log.info('Configure in Skipstone on phone using address: %s:%d', local_ip, port)
