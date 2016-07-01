@@ -1,12 +1,8 @@
 # skipstone_server
 
-Fake WDTV simulator written in Python for https://github.com/Skipstone/Skipstone
+Fake WDTV simulator for [Pebble app Skipstone](https://github.com/Skipstone/Skipstone)
 aim is to be a generic multimedia keyboard to control almost any
 player or application that supports multimedia keys.
-
-Relies on https://github.com/asweigart/pyautogui/ TODO add requirements.txt for pip.
-
-Known to work with Python 2.6.6 and 2.7.
 
 Should work with:
 
@@ -14,7 +10,7 @@ Should work with:
    * Linux
    * Mac OS X
 
-Provides a wsgi app, uses wsgi reference server if ran stand alone but should run with any wsgi server (Rocket, CherryPy, etc.)
+Downloads (including Windows exes) available from https://github.com/clach04/skipstone_server/releases/
 
 Works well enough with Skipstone for Pebble that WDTV option can be used to control:
 
@@ -61,3 +57,12 @@ Should work with any media player that supports media keys.
 | Long click select <sub><sup>(option 3)</sup></sub>   | Option                         | TBD                            |
 | Single click down <sub><sup>(option 3)</sup></sub>   | Setup                          | TBD                            |
 | Long click down <sub><sup>(option 3)</sup></sub>     | Power                          | TBD                            |
+
+## Source information
+
+Relies on https://github.com/asweigart/pyautogui/ TODO add requirements.txt for pip.
+
+Known to work with Python 2.6.6 and 2.7.
+
+Provides a wsgi app, uses wsgi reference server if ran stand alone but should run with any wsgi server (Rocket, CherryPy, etc.)
+
