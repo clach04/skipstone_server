@@ -29,23 +29,23 @@ Should work with any media player that supports media keys.
 | ---------------------------------------------------- | ------------------------------ | ------------------------------ |
 | Double click select                                  | Switch between options 1/2/3/4 | Switch between options 1/2/3/4 |
 |                                                      |                                |                                |
-| Single click up <sub><sup>(option 1)</sup></sub>     | Rewind                         |                                |
-| Long click up <sub><sup>(option 1)</sup></sub>       | Previous                       |                                |
-| Single click select <sub><sup>(option 1)</sup></sub> | Play/Pause                     |                                |
-| Long click select <sub><sup>(option 1)</sup></sub>   | Stop                           |                                |
-| Single click down <sub><sup>(option 1)</sup></sub>   | Forward                        |                                |
-| Long click down <sub><sup>(option 1)</sup></sub>     | Next                           |                                |
+| Single click up <sub><sup>(option 1)</sup></sub>     | Rewind                         | Ctrl+Left and Ctrl+Shift+b     |
+| Long click up <sub><sup>(option 1)</sup></sub>       | Previous                       | Multimedia key: Previous track |
+| Single click select <sub><sup>(option 1)</sup></sub> | Play/Pause                     | Multimedia key: Play/Pause     |
+| Long click select <sub><sup>(option 1)</sup></sub>   | Stop                           | Multimedia key: Stop           |
+| Single click down <sub><sup>(option 1)</sup></sub>   | Forward                        | Ctrl+Right and Ctrl+Shift+f    |
+| Long click down <sub><sup>(option 1)</sup></sub>     | Next                           | Multimedia key: Next track     |
 |                                                      |                                |                                |
-| Single click up <sub><sup>(option 2)</sup></sub>     | Up                             |                                |
-| Long click up <sub><sup>(option 2)</sup></sub>       | Left                           |                                |
-| Single click select <sub><sup>(option 2)</sup></sub> | OK                             |                                |
-| Long click select <sub><sup>(option 2)</sup></sub>   | Back                           |                                |
-| Single click down <sub><sup>(option 2)</sup></sub>   | Down                           |                                |
-| Long click down <sub><sup>(option 2)</sup></sub>     | Right                          |                                |
+| Single click up <sub><sup>(option 2)</sup></sub>     | Up                             | Up                             |
+| Long click up <sub><sup>(option 2)</sup></sub>       | Left                           | Left                           |
+| Single click select <sub><sup>(option 2)</sup></sub> | OK                             | Enter/Return                   |
+| Long click select <sub><sup>(option 2)</sup></sub>   | Back                           | Multimedia key: Browser back   |
+| Single click down <sub><sup>(option 2)</sup></sub>   | Down                           | Down                           |
+| Long click down <sub><sup>(option 2)</sup></sub>     | Right                          | Right                          |
 |                                                      |                                |                                |
-| Single click up <sub><sup>(option 3)</sup></sub>     | Back                           |                                |
-| Long click up <sub><sup>(option 3)</sup></sub>       | Mute                           |                                |
-| Single click select <sub><sup>(option 3)</sup></sub> | Home                           |                                |
-| Long click select <sub><sup>(option 3)</sup></sub>   | Option                         |                                |
-| Single click down <sub><sup>(option 3)</sup></sub>   | Setup                          |                                |
-| Long click down <sub><sup>(option 3)</sup></sub>     | Power                          |                                |
+| Single click up <sub><sup>(option 3)</sup></sub>     | Back                           | Multimedia key: Browser back   |
+| Long click up <sub><sup>(option 3)</sup></sub>       | Mute                           | Multimedia key: Mute toggle    |
+| Single click select <sub><sup>(option 3)</sup></sub> | Home                           | TBD                            |
+| Long click select <sub><sup>(option 3)</sup></sub>   | Option                         | TBD                            |
+| Single click down <sub><sup>(option 3)</sup></sub>   | Setup                          | TBD                            |
+| Long click down <sub><sup>(option 3)</sup></sub>     | Power                          | TBD                            |
