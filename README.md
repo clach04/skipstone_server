@@ -12,6 +12,7 @@ Works well enough with Skipstone for Pebble that WDTV option can be used to cont
 
    * Windows Media Center (aka MCE)
    * Windows Media Player
+   * Winamp
    * VLC (more functionality present in Skipstone via direct VLC support)
    * LibreOffice Impress for navigating presentation slides (up/down goes backwards/forwards and select also does forwards)
 
