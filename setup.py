@@ -18,13 +18,13 @@ options = {
     'py2exe': {
         'includes': hiddenimports,
         'excludes': hidden_excludes,
-        "compressed": 1,
-        "optimize": 2,  ## NOTE 2 will optimize out __doc__ strings
+        "compressed": 1, # create a compressed zip archive
+        "optimize": 2,  # NOTE 2 will optimize out __doc__ strings
     }
 }
 
 # Avoid cluttering directory containing exe file(s) with pyd files,
-# exe(s) will have python dll and then directory of dependencies
+# exe(s) directory will have python dll and then sub-directory of dependencies
 zipfile = os.path.join('lib', 'shared.zip')
 
 
