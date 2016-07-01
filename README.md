@@ -25,9 +25,12 @@ Should work with any media player that supports media keys.
 
 ### Controls
 
+
+<img src="https://raw.githubusercontent.com/Skipstone/Skipstone/master/resources/images/wdtv.png" alt="Skipstone Pebble screen, showing three different options"> 
+
 | Pebble Button                                        | WDTV Function                  | Keyboard Function on remote PC |
 | ---------------------------------------------------- | ------------------------------ | ------------------------------ |
-| Double click select                                  | Switch between options 1/2/3/4 | Switch between options 1/2/3/4 |
+| Double click select                                  | Switch between options 1/2/3   | Switch between options 1/2/3   |
 |                                                      |                                |                                |
 | Single click up <sub><sup>(option 1)</sup></sub>     | Rewind                         | Ctrl+Left and Ctrl+Shift+b     |
 | Long click up <sub><sup>(option 1)</sup></sub>       | Previous                       | Multimedia key: Previous track |
