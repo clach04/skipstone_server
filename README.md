@@ -22,3 +22,30 @@ Should work with any media player that supports media keys.
   1. Install/run, by default the server starts on the local machine listening on port 8777.
   2. Open Skipstone config on phone, add a new WDTV device, name it, e.g. `fake WDTV`, enter in ip address of machinr, colon, 8777. For example, assume IP address for server machine is 10.10.10.10, enter in, `10.10.10.10:8777`.
   3. Save and then open Skipstone on watch, open WDTV from above (e.g. `fake WDTV`) then control and see https://github.com/Skipstone/Skipstone#wdtv for controls
+
+### Controls
+
+| Pebble Button                                        | WDTV Function                  | Keyboard Function on remote PC |
+| ---------------------------------------------------- | ------------------------------ | ------------------------------ |
+| Double click select                                  | Switch between options 1/2/3/4 | Switch between options 1/2/3/4 |
+|                                                      |                                |                                |
+| Single click up <sub><sup>(option 1)</sup></sub>     | Rewind                         |                                |
+| Long click up <sub><sup>(option 1)</sup></sub>       | Previous                       |                                |
+| Single click select <sub><sup>(option 1)</sup></sub> | Play/Pause                     |                                |
+| Long click select <sub><sup>(option 1)</sup></sub>   | Stop                           |                                |
+| Single click down <sub><sup>(option 1)</sup></sub>   | Forward                        |                                |
+| Long click down <sub><sup>(option 1)</sup></sub>     | Next                           |                                |
+|                                                      |                                |                                |
+| Single click up <sub><sup>(option 2)</sup></sub>     | Up                             |                                |
+| Long click up <sub><sup>(option 2)</sup></sub>       | Left                           |                                |
+| Single click select <sub><sup>(option 2)</sup></sub> | OK                             |                                |
+| Long click select <sub><sup>(option 2)</sup></sub>   | Back                           |                                |
+| Single click down <sub><sup>(option 2)</sup></sub>   | Down                           |                                |
+| Long click down <sub><sup>(option 2)</sup></sub>     | Right                          |                                |
+|                                                      |                                |                                |
+| Single click up <sub><sup>(option 3)</sup></sub>     | Back                           |                                |
+| Long click up <sub><sup>(option 3)</sup></sub>       | Mute                           |                                |
+| Single click select <sub><sup>(option 3)</sup></sub> | Home                           |                                |
+| Long click select <sub><sup>(option 3)</sup></sub>   | Option                         |                                |
+| Single click down <sub><sup>(option 3)</sup></sub>   | Setup                          |                                |
+| Long click down <sub><sup>(option 3)</sup></sub>     | Power                          |                                |
