@@ -84,6 +84,53 @@ commands = {
     'r': 'right',
 }
 
+"""
+From http://www.openremote.org/display/forums/WD+TV+Live+and+Openremote
+full mapping list:
+
+    w = power
+    o = home
+
+    \\\\ = subtitle
+    , = audio
+
+    [ = prev
+    t = stop
+    ] = next
+    H = rewind
+    p = play_pause
+    I = forward
+
+    T = back
+    l = cursor left
+    n = ok
+    u = cursor up
+    G = option
+    r = cursor right
+    U = prev_page
+    d = cursor down
+    D = next_page
+    M = mute
+    s = setup
+
+    x = a (green)
+    y = b (red)
+    z = c (yellow)
+    A = d (blue)
+    1 = 1
+    2 = 2
+    3 = 3
+    4 = 4
+    5 = 5
+    6 = 6
+    7 = 7
+    8 = 8
+    9 = 9
+    0 = 0
+    E = search
+    X = eject
+"""
+
 def not_found(environ, start_response):
     """serves 404s."""
     #start_response('404 NOT FOUND', [('Content-Type', 'text/plain')])
