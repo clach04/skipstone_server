@@ -3,6 +3,7 @@
 # vim:ts=4:sw=4:softtabstop=4:smarttab:expandtab
 #
 """Emulate WDTV api enough to work with Pebble Skipstone
+NOTE Python 2 and Python 3 code.
 """
 
 import cgi
@@ -17,7 +18,11 @@ import mimetypes
 import os
 from pprint import pprint
 import socket
-import SocketServer
+try:
+    import SocketServer
+except ImportError:
+    # Python 3
+    import socketserver as SocketServer
 import struct
 import sys
 from wsgiref.simple_server import make_server, WSGIServer, WSGIRequestHandler
@@ -33,6 +38,11 @@ log.setLevel(level=logging.DEBUG)
 version_tuple = (0, 0, 1)
 version = version_string = '%d.%d.%d' % version_tuple
 
+try:
+    basestring
+except NameError:
+    # python 3
+    basestring = str
 
 def send_single_keypress(key_name):
     print(key_name)
@@ -41,7 +51,7 @@ def send_single_keypress(key_name):
 
 def send_multiple_keypresses(key_press_list):
     for key_tuple in key_press_list:
-        print key_tuple
+        print(key_tuple)
         pyautogui.hotkey(*key_tuple)
 
 
@@ -109,6 +119,9 @@ def simple_app(environ, start_response):
     request_body = environ['wsgi.input'].read(request_body_size)
 
     if path_info and path_info == '/cgi-bin/toServerValue.cgi':
+        log.debug('request_body %r', request_body)
+        request_body = request_body.decode('utf-8')
+        log.debug('request_body %r', request_body)
         data = json.loads(request_body)
         command = data['remote']
         #command_function = commands.get(command)
@@ -116,9 +129,8 @@ def simple_app(environ, start_response):
         command_result = send_presses(presses_to_send)
         if command_result is None:
             # no idea what should be returned however Skipstone doesn't check :-)
-            result.append('')
-        else:
-            result.append(command_result)
+            command_result = ''
+        result.append(command_result.encode('utf-8'))
     else:
         return not_found(environ, start_response)
 
@@ -189,6 +201,7 @@ def determine_local_ipaddr():
         import fcntl
 
         def get_ip_address(ifname):
+            ifname = ifname.encode('latin1')
             s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
             return socket.inet_ntoa(fcntl.ioctl(
                 s.fileno(),
