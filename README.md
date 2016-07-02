@@ -72,7 +72,9 @@ Should work with any media player that supports media keys.
 
 Relies on https://github.com/asweigart/pyautogui/ TODO add requirements.txt for pip.
 
-Known to work with Python 2.6.6 and 2.7.
+Known to work with:
+  * Python 2.6.6 and 2.7.
+  * Python 3.5.1
 
 Provides a wsgi app, uses wsgi reference server if ran stand alone but should run with any wsgi server (Rocket, CherryPy, etc.)
 
