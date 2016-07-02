@@ -6,6 +6,11 @@
 """
 
 import cgi
+try:
+    from java.net import InetAddress
+except ImportError:
+    # Not Jython
+    InetAddress = None
 import json  # Python 2.6+
 import logging
 import mimetypes
@@ -13,8 +18,10 @@ import os
 from pprint import pprint
 import socket
 import SocketServer
+import struct
 import sys
 from wsgiref.simple_server import make_server, WSGIServer, WSGIRequestHandler
+
 
 import pyautogui  # https://github.com/asweigart/pyautogui
 
@@ -186,7 +193,7 @@ class MyWSGIRequestHandler(WSGIRequestHandler):
 
 class MyWSGIServer(WSGIServer):
     """Avoid default Python socket server oddities.
-    
+
      1) Do not perform Fully Qualified Domain Lookup.
         On networks with missing (or poor) DNS, getfqdn() can take over
         5 secs EACH network IO.
@@ -202,9 +209,9 @@ class MyWSGIServer(WSGIServer):
         to the same port and is essentially enabling SO_EXCLUSIVEADDRUSE on
         all sockets. See Java bug 6421091.
     """
-    
+
     allow_reuse_address = False  # Use SO_EXCLUSIVEADDRUSE,  True only makes sense for testing
-    
+
     def server_bind(self):
         """Override server_bind to store the server name."""
         SocketServer.TCPServer.server_bind(self)
@@ -214,6 +221,60 @@ class MyWSGIServer(WSGIServer):
         self.setup_environ()
 
 
+def determine_local_ipaddr():
+    local_address = None
+
+    # Most portable (for modern versions of Python)
+    if hasattr(socket, 'gethostbyname_ex'):
+        for ip in socket.gethostbyname_ex(socket.gethostname())[2]:
+            if not ip.startswith('127.'):
+                local_address = ip
+                break
+    # may be none still (nokia) http://www.skweezer.com/s.aspx/-/pypi~python~org/pypi/netifaces/0~4 http://www.skweezer.com/s.aspx?q=http://stackoverflow.com/questions/166506/finding-local-ip-addresses-using-pythons-stdlib has alonger one
+
+    if sys.platform.startswith('linux'):
+        import fcntl
+
+        def get_ip_address(ifname):
+            s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+            return socket.inet_ntoa(fcntl.ioctl(
+                s.fileno(),
+                0x8915,  # SIOCGIFADDR
+                struct.pack('256s', ifname[:15])
+            )[20:24])
+
+        if not local_address:
+            for devname in os.listdir('/sys/class/net/'):
+                try:
+                    ip = get_ip_address(devname)
+                    if not ip.startswith('127.'):
+                        local_address = ip
+                        break
+                except IOError:
+                    pass
+
+    # Jython / Java approach
+    if not local_address and InetAddress:
+        addr = InetAddress.getLocalHost()
+        hostname = addr.getHostName()
+        for ip_addr in InetAddress.getAllByName(hostname):
+            if not ip_addr.isLoopbackAddress():
+                local_address = ip_addr.getHostAddress()
+                break
+
+    if not local_address:
+        # really? Oh well lets connect to a remote socket (Google DNS server)
+        # and see what IP we use them
+        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        s.connect(('8.8.8.8', 53))
+        ip = s.getsockname()[0]
+        s.close()
+        if not ip.startswith('127.'):
+            local_address = ip
+
+    return local_address
+
+
 def doit():
     # TODO yep, currently hard coded if ran standalone
     port = 8000
@@ -221,10 +282,7 @@ def doit():
     port = 8777
 
     httpd = make_server('', port, simple_app, server_class=MyWSGIServer, handler_class=MyWSGIRequestHandler)
-    # Attempt to determine actual IP address, with multipl addresses this may not be a useful IP
-    local_ip = socket.gethostbyname(socket.gethostname())
-    if not local_ip or local_ip == '127.0.1.1':
-        local_ip = socket.gethostbyname(socket.getfqdn())
+    local_ip = determine_local_ipaddr()
     log.info('wdtv simulator %s', version)
     log.info('Starting server: %r', (local_ip, port))
     log.info('To stop, issue CTRL-C or (Windows) CTRL-Break')
