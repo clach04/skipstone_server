@@ -33,92 +33,45 @@ log.setLevel(level=logging.DEBUG)
 version_tuple = (0, 0, 1)
 version = version_string = '%d.%d.%d' % version_tuple
 
-def mute_toggle():
-    key_name = 'volumemute'
+
+def send_single_keypress(key_name):
     print(key_name)
     pyautogui.press(key_name)
 
-def play_pause():
-    key_name = 'playpause'
-    print(key_name)
-    pyautogui.press(key_name)
 
-def stop():
-    key_name = 'stop'
-    print(key_name)
-    pyautogui.press(key_name)
+def send_multiple_keypresses(key_press_list):
+    for key_tuple in key_press_list:
+        print key_tuple
+        pyautogui.hotkey(*key_tuple)
 
-def enter():
-    key_name = 'enter'
-    print(key_name)
-    pyautogui.press(key_name)
 
-def up():
-    key_name = 'up'
-    print(key_name)
-    pyautogui.press(key_name)
-
-def down():
-    key_name = 'down'
-    print(key_name)
-    pyautogui.press(key_name)
-
-def left():
-    key_name = 'left'
-    print(key_name)
-    pyautogui.press(key_name)
-
-def right():
-    key_name = 'right'
-    print(key_name)
-    pyautogui.press(key_name)
-
-def back():
-    key_name = 'browserback'
-    print(key_name)
-    pyautogui.press(key_name)
-
-def next_track():
-    key_name = 'nexttrack'
-    print(key_name)
-    pyautogui.press(key_name)
-
-def previous_track():
-    key_name = 'prevtrack'
-    print(key_name)
-    pyautogui.press(key_name)
-
-def rewind():
-    key_name = 'rewind'
-    print(key_name)
-    # send two sets of controls, like chinavision cvsb-983 remote
-    pyautogui.hotkey('ctrl', 'shift', 'b')
-    pyautogui.hotkey('ctrl', 'left')
-
-def forward():
-    key_name = 'forward'
-    print(key_name)
-    # send two sets of controls, like chinavision cvsb-983 remote
-    pyautogui.hotkey('ctrl', 'shift', 'f')
-    pyautogui.hotkey('ctrl', 'right')
+def send_presses(presses_to_send):
+    if isinstance(presses_to_send, basestring):
+        # assume single key name
+        command_function = send_single_keypress
+    else:
+        # assume list of, key presses (list of tuples)
+        command_function = send_multiple_keypresses
+    result = command_function(presses_to_send)
+    return result
 
 
 # See https://github.com/Skipstone/Skipstone/blob/master/src/js/src/wdtv.js
 # for commands
 commands = {
-    '[': previous_track,
-    ']': next_track,
-    'H': rewind,
-    'I': forward,
-    'M': mute_toggle,
-    'p': play_pause,
-    't': stop,
-    'n': enter,  # OK
-    'T': back,
-    'u': up,
-    'd': down,
-    'l': left,
-    'r': right,
+    '[': 'prevtrack',
+    ']': 'nexttrack',
+    'H': [('ctrl', 'shift', 'b'), ('ctrl', 'left')],  # rewind - send two sets of controls, like chinavision cvsb-983 remote
+    'I': [('ctrl', 'shift', 'f'), ('ctrl', 'right')],  # rewind - send two sets of controls, like chinavision cvsb-983 remote
+    'M': 'volumemute',
+    'p': 'playpause',
+    't': 'stop',
+    'n': 'enter',  # OK
+    'T': 'browserback',
+    'u': 'up',
+    'd': 'down',
+    'l': 'left',
+    'r': 'right',
 }
 
 def not_found(environ, start_response):
@@ -159,8 +112,8 @@ def simple_app(environ, start_response):
         data = json.loads(request_body)
         command = data['remote']
         #command_function = commands.get(command)
-        command_function = commands[command]
-        command_result = command_function()
+        presses_to_send = commands[command]
+        command_result = send_presses(presses_to_send)
         if command_result is None:
             # no idea what should be returned however Skipstone doesn't check :-)
             result.append('')
