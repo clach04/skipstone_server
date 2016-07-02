@@ -72,7 +72,7 @@ commands = {
     '[': 'prevtrack',
     ']': 'nexttrack',
     'H': [('ctrl', 'shift', 'b'), ('ctrl', 'left')],  # rewind - send two sets of controls, like chinavision cvsb-983 remote
-    'I': [('ctrl', 'shift', 'f'), ('ctrl', 'right')],  # rewind - send two sets of controls, like chinavision cvsb-983 remote
+    'I': [('ctrl', 'shift', 'f'), ('ctrl', 'right')],  # forward - send two sets of controls, like chinavision cvsb-983 remote
     'M': 'volumemute',
     'p': 'playpause',
     't': 'stop',
