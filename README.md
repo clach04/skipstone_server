@@ -65,7 +65,7 @@ Should work with any media player that supports media keys.
 | Long click up <sub><sup>(option 3)</sup></sub>       | Mute                           | Multimedia key: Mute toggle    |
 | Single click select <sub><sup>(option 3)</sup></sub> | <img src="https://raw.githubusercontent.com/Skipstone/Skipstone/master/resources/images/home.png"> Home                           | TBD                            |
 | Long click select <sub><sup>(option 3)</sup></sub>   | Option                         | TBD                            |
-| Single click down <sub><sup>(option 3)</sup></sub>   | Setup                          | TBD                            |
+| Single click down <sub><sup>(option 3)</sup></sub>   | <img src="https://raw.githubusercontent.com/Skipstone/Skipstone/master/resources/images/settings.png"> Setup                          | TBD                            |
 | Long click down <sub><sup>(option 3)</sup></sub>     | Power                          | TBD                            |
 
 ## Source information
