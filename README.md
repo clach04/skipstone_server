@@ -56,7 +56,7 @@ Should work with any media player that supports media keys.
 |                                                      |                                |                                |
 | Single click up <sub><sup>(option 2)</sup></sub>     | Up                             | Up                             |
 | Long click up <sub><sup>(option 2)</sup></sub>       | Left                           | Left                           |
-| Single click select <sub><sup>(option 2)</sup></sub> | OK                             | Enter/Return                   |
+| Single click select <sub><sup>(option 2)</sup></sub> | <img src="https://raw.githubusercontent.com/Skipstone/Skipstone/master/resources/images/select.png"> OK                             | Enter/Return                   |
 | Long click select <sub><sup>(option 2)</sup></sub>   | Back                           | Multimedia key: Browser back   |
 | Single click down <sub><sup>(option 2)</sup></sub>   | Down                           | Down                           |
 | Long click down <sub><sup>(option 2)</sup></sub>     | Right                          | Right                          |
