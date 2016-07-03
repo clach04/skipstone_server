@@ -47,23 +47,23 @@ Should work with any media player that supports media keys.
 | ---------------------------------------------------- | ------------------------------ | ------------------------------ |
 | Double click select                                  | Switch between options 1/2/3   | Switch between options 1/2/3   |
 |                                                      |                                |                                |
-| Single click up <sub><sup>(option 1)</sup></sub>     | Rewind                         | Ctrl+Left and Ctrl+Shift+b     |
-| Long click up <sub><sup>(option 1)</sup></sub>       | Previous                       | Multimedia key: Previous track |
-| Single click select <sub><sup>(option 1)</sup></sub> | Play/Pause                     | Multimedia key: Play/Pause     |
+| Single click up <sub><sup>(option 1)</sup></sub>     | <img src="https://raw.githubusercontent.com/Skipstone/Skipstone/master/resources/images/rewind.png"> Rewind                         | Ctrl+Left and Ctrl+Shift+b     |
+| Long click up <sub><sup>(option 1)</sup></sub>       | <img src="https://raw.githubusercontent.com/Skipstone/Skipstone/master/resources/images/previous.png"> Previous                       | Multimedia key: Previous track |
+| Single click select <sub><sup>(option 1)</sup></sub> | <img src="https://raw.githubusercontent.com/Skipstone/Skipstone/master/resources/images/play_pause.png"> Play/Pause                     | Multimedia key: Play/Pause     |
 | Long click select <sub><sup>(option 1)</sup></sub>   | Stop                           | Multimedia key: Stop           |
-| Single click down <sub><sup>(option 1)</sup></sub>   | Forward                        | Ctrl+Right and Ctrl+Shift+f    |
-| Long click down <sub><sup>(option 1)</sup></sub>     | Next                           | Multimedia key: Next track     |
+| Single click down <sub><sup>(option 1)</sup></sub>   | <img src="https://raw.githubusercontent.com/Skipstone/Skipstone/master/resources/images/forward.png"> Forward                        | Ctrl+Right and Ctrl+Shift+f    |
+| Long click down <sub><sup>(option 1)</sup></sub>     | <img src="https://raw.githubusercontent.com/Skipstone/Skipstone/master/resources/images/next.png"> Next                           | Multimedia key: Next track     |
 |                                                      |                                |                                |
-| Single click up <sub><sup>(option 2)</sup></sub>     | Up                             | Up                             |
+| Single click up <sub><sup>(option 2)</sup></sub>     | <img src="https://raw.githubusercontent.com/Skipstone/Skipstone/master/resources/images/up.png"> Up                             | Up                             |
 | Long click up <sub><sup>(option 2)</sup></sub>       | Left                           | Left                           |
 | Single click select <sub><sup>(option 2)</sup></sub> | <img src="https://raw.githubusercontent.com/Skipstone/Skipstone/master/resources/images/select.png"> OK                             | Enter/Return                   |
-| Long click select <sub><sup>(option 2)</sup></sub>   | Back                           | Multimedia key: Browser back   |
-| Single click down <sub><sup>(option 2)</sup></sub>   | Down                           | Down                           |
+| Long click select <sub><sup>(option 2)</sup></sub>   | <img src="https://raw.githubusercontent.com/Skipstone/Skipstone/master/resources/images/back.png"> Back                           | Multimedia key: Browser back   |
+| Single click down <sub><sup>(option 2)</sup></sub>   | <img src="https://raw.githubusercontent.com/Skipstone/Skipstone/master/resources/images/down.png"> Down                           | Down                           |
 | Long click down <sub><sup>(option 2)</sup></sub>     | Right                          | Right                          |
 |                                                      |                                |                                |
 | Single click up <sub><sup>(option 3)</sup></sub>     | Back                           | Multimedia key: Browser back   |
 | Long click up <sub><sup>(option 3)</sup></sub>       | Mute                           | Multimedia key: Mute toggle    |
-| Single click select <sub><sup>(option 3)</sup></sub> | Home                           | TBD                            |
+| Single click select <sub><sup>(option 3)</sup></sub> | <img src="https://raw.githubusercontent.com/Skipstone/Skipstone/master/resources/images/home.png"> Home                           | TBD                            |
 | Long click select <sub><sup>(option 3)</sup></sub>   | Option                         | TBD                            |
 | Single click down <sub><sup>(option 3)</sup></sub>   | Setup                          | TBD                            |
 | Long click down <sub><sup>(option 3)</sup></sub>     | Power                          | TBD                            |
