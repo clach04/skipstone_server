@@ -61,7 +61,7 @@ Should work with any media player that supports media keys.
 | Single click down <sub><sup>(option 2)</sup></sub>   | <img src="https://raw.githubusercontent.com/Skipstone/Skipstone/master/resources/images/down.png"> Down                           | Down                           |
 | Long click down <sub><sup>(option 2)</sup></sub>     | Right                          | Right                          |
 |                                                      |                                |                                |
-| Single click up <sub><sup>(option 3)</sup></sub>     | Back                           | Multimedia key: Browser back   |
+| Single click up <sub><sup>(option 3)</sup></sub>     | <img src="https://raw.githubusercontent.com/Skipstone/Skipstone/master/resources/images/back.png"> Back                           | Multimedia key: Browser back   |
 | Long click up <sub><sup>(option 3)</sup></sub>       | Mute                           | Multimedia key: Mute toggle    |
 | Single click select <sub><sup>(option 3)</sup></sub> | <img src="https://raw.githubusercontent.com/Skipstone/Skipstone/master/resources/images/home.png"> Home                           | TBD                            |
 | Long click select <sub><sup>(option 3)</sup></sub>   | Option                         | TBD                            |
