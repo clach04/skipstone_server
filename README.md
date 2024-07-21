@@ -11,7 +11,7 @@ Allows a PC to be controlled via keyboard controls from a Pebble using Skipstone
 
 Fake WDTV simulator for [Pebble app Skipstone](https://github.com/Skipstone/Skipstone)
 aim is to be a generic multimedia keyboard to control almost any
-player or application that supports multimedia keys.
+player or application that supports multimedia keys. Relies on pyautogui to simulate keyboard presses.
 
 Should work with:
 
