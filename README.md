@@ -70,7 +70,7 @@ Should work with any media player that supports media keys.
 
 ## Source information
 
-Relies on https://github.com/asweigart/pyautogui/ TODO add requirements.txt for pip.
+Relies on https://github.com/asweigart/pyautogui/ TODO add requirements.txt for pip, see https://github.com/clach04/skipstone_server/issues/3.
 
 Known to work with:
   * Python 2.6.6 and 2.7.
